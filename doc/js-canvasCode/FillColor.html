@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head style="height: 100%;">
+		<meta charset="UTF-8">
+		<title>Zday jHMI</title>
+	
+	</head>
+
+	<body >
+        <div id="designView" style="width: 100%; height: 100%; float: left; background-color: #808080;">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <script>
+            var canvas = document.getElementById('canvas');
+            ctx = canvas.getContext("2d");
+            var linear = ctx.createLinearGradient(100, 100, 200, 100);
+            linear.addColorStop(0, '#fff');
+            linear.addColorStop(0.5, '#f0f');
+            linear.addColorStop(1, '#333');
+            ctx.fillStyle = linear; //把渐变赋给填充样式 
+            ctx.fillRect(100, 100, 100, 100);
+            ctx.stroke();
+                    
+
+            
+            ctx.moveTo(50, 50);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.lineTo(300, 90);
+            ctx.lineTo(200, 90);
+            linear = ctx.createLinearGradient(0, 0, 0, 300);
+            linear.addColorStop(0, '#fff');
+            linear.addColorStop(0.5, '#f0f');
+            linear.addColorStop(1, '#333');
+            ctx.lineWidth = 30;
+            ctx.strokeStyle = linear;
+            ctx.stroke();
+
+            context = ctx;
+            //水平渐变值必须保持为0
+            var gr = context.createLinearGradient(0, 0, 0, 100);
+            //添加颜色端点
+            gr.addColorStop(0, 'rgb(255,0,0)');
+            gr.addColorStop(.5, 'rgb(0,255,0)');
+            gr.addColorStop(1, 'rgb(0,0,255)');
+            //应用fillStyle生成渐变
+            context.fillStyle = gr;
+            context.beginPath();
+            context.moveTo(0, 0);
+            context.lineTo(50, 0);
+            context.lineTo(100, 50);
+            context.lineTo(50, 100);
+            context.lineTo(0, 100);
+            context.lineTo(0, 0);
+            context.stroke();
+            context.fill();
+            context.closePath();
+
+        
+          </script>
+	
+		
+	</body>
+
+</html>

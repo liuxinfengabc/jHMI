@@ -1,0 +1,124 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+/* Download by http://www.codefans.net */
+body {
+	margin: 0;
+	padding: 0;
+	background: #949A8C;
+}
+
+a {
+	color: #000000;	
+}
+a:hover {
+	color: #000000;	
+}
+
+ul {
+	position: relative;
+	margin: 10px 10px 10px 25px;
+}
+
+/*------------------------------------------------------
+C O N T A I N E R
+------------------------------------------------------*/
+.container {
+	position: relative;
+	margin: 10px auto  10px auto;
+	/*padding: 0px 0px 0px 0px;*/
+	width: 750px;
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	font-size: 14px;
+	color: #000000;
+}
+
+.application {
+	position: relative;
+	/*float: right;*/
+	padding: 10px 10px 10px 10px;
+	margin: 0 0 0 0;
+	width: 640px;
+	background: #CECEB5;
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	color: #000000;
+	border: 1px solid #212829;
+	text-align: left;
+}
+
+
+.help_data{
+	padding: 5px 5px 5px 5px;
+	background: #DEDECE;
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	color: #000000;
+}
+
+.form_data{
+	padding: 5px 5px 5px 5px;
+}
+
+.header {
+	background: #FFFFFF;
+	padding: auto;
+	margin: auto;
+}
+
+/*------------------------------------------------------
+S U P P O R T I N G   T E X T 
+------------------------------------------------------*/
+.bold_font{
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #480000;
+	/*background: url(images/help.gif) 0px 4px no-repeat;*/
+	padding: 5px 5px 5px 5px;
+}
+
+.norm_font {
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	/*font-size: 12 px;*/
+	padding: 5px 5px 5px 5px;
+	color: #000000;
+}
+
+table, input {
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	padding: 1px 1px 1px 1px;
+	font-size: 1 em;
+	color: #000000;
+}
+
+.p1,.p2,.p3,.p4,.p5 {
+	margin-top: 10px;
+}
+.p5 {
+	padding: 10px;
+	background: #0B1C07;
+}
+
+/* ---------------------------------------------------------------
+Mozilla style downloads 
+-----------------------------------------------------------------*/
+
+.download {
+background: #CECEB5 url("img/full.jpg") 0px 0px no-repeat;
+font-style: normal;
+margin: 0px 0px 0px 0px;
+padding: 15px 0px 15px 65px;
+text-align: left;
+width: 325px;
+height: 60px;
+clear: both;
+}
+
+.download a {
+color: #1D9101;
+font-weight: bold;
+}
+
+.download a:hover {
+color: #156B01;
+}

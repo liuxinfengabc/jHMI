@@ -1,0 +1,149 @@
+{
+	"data":[
+	{
+	    "name": "计量设备",
+	    "url": "",
+	    "children":[
+	    	 {
+			    "name": "水表",
+			    "url": "shuibiao",
+			    "imgsrc":"images/path/water.jpg"
+			  },
+			  {
+			    "name": "电表",
+			    "url": "",
+			    "imgsrc":"images/path/meter.jpg"
+			  },
+			  {
+			    "name": "汽表",
+			    "url": "",
+			    "imgsrc":"images/path/gas.jpg"
+			  },
+			  {
+			    "name": "电站",
+			    "url": "",
+			    "imgsrc":"images/path/station.jpg"
+			  }
+	    ]
+	},
+	{
+	  	"name": "网络设备",
+    	"url": "",
+    	"children":[
+    		{
+    			"name":"交换机",
+    			"url":"",
+    			"imgsrc":"images/room/wanjet.png"
+    		},
+    		{
+    			"name":"汇聚设备",
+    			"url":"",
+    			"imgsrc":"images/room/center.png"
+    		},
+    		{
+    			"name":"云模块",
+    			"url":"",
+    			"imgsrc":"images/room/cloud.png"
+    		},
+    		{
+    			"name":"交换设备",
+    			"url":"",
+    			"imgsrc":"images/room/gather.png"
+    		},
+    		{
+    			"name":"工作站",
+    			"url":"",
+    			"imgsrc":"images/room/host.png"
+    		},
+    		{
+    			"name":"服务器",
+    			"url":"",
+    			"imgsrc":"images/room/server.png"
+    		}
+    	]
+	  },
+	  
+	{
+	  	"name": "电力设备",
+    	"url": "",
+    	"children":[
+    	{
+    			"name":"卫星天线",
+    			"url":"",
+    			"imgsrc":"images/new/satellite_antenna.png"
+    		},
+    		{
+    			"name":"天线",
+    			"url":"",
+    			"imgsrc":"images/new/antenna.png"
+    		},
+    		{
+    			"name":"主机",
+    			"url":"",
+    			"imgsrc":"images/new/mainframe.png"
+    		},
+    		{
+    			"name":"解调器",
+    			"url":"",
+    			"imgsrc":"images/new/modem.png"
+    		},
+    		{
+    			"name":"运行",
+    			"url":"",
+    			"imgsrc":"images/new/msc.png"
+    		},
+    		{
+    			"name":"电话",
+    			"url":"",
+    			"imgsrc":"images/new/phone.png"
+    		},
+    		{
+    			"name":"路由器",
+    			"url":"",
+    			"imgsrc":"images/new/router.png"
+    		},
+    		{
+    			"name":"路由器2",
+    			"url":"",
+    			"imgsrc":"images/new/router2.png"
+    		},
+    		{
+    			"name":"终端",
+    			"url":"",
+    			"imgsrc":"images/new/terminal.png"
+    		},
+    		{
+    			"name":"实验室",
+    			"url":"",
+    			"imgsrc":"images/new/testing.png"
+    		},
+    		{
+    			"name":"tw130",
+    			"url":"",
+    			"imgsrc":"images/new/tw130.png"
+    		},
+    		{
+    			"name":"波分复用",
+    			"url":"",
+    			"imgsrc":"images/new/wdm.png"
+    		},
+    		{
+    			"name":"云",
+    			"url":"",
+    			"imgsrc":"images/new/cloud.png"
+    		}
+    	]
+    },
+	  
+    
+    {
+	  	"name": "基本图元",
+    	"url": "",
+    	"children":[]
+    }
+    ]
+    }
+    
+	
+
+	

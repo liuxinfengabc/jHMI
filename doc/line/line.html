@@ -1,0 +1,62 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Java, Apache, Perl, CSS, DHTML, chart, graph, bar, line, pie, Free Resource, Spiritual, OM, Travelouge, Enlightenment Download by http://www.jb51.net</title>
+<link rel="stylesheet" type="text/css" href="style_ie.css">
+</head><body>
+
+
+<center>
+<div class="container">
+
+<div class="application">
+
+<div class="bold_font">DHTML / CSS based line graph</div>
+ 
+<!-- graph code begins here-->
+<script type="text/javascript" src="wz_jsgraphics.js"></script>
+<script type="text/javascript" src="line.js"></script>
+<div id="myCanvas" style="overflow: auto; position: relative; height: 300px; width: 400px;"></div>
+
+<script>
+var g = new line_graph();
+
+//for small values < 5, use a scale of 10x and for values < 1, use 100x
+//g.setScale(10);
+
+g.add('1', 145);
+g.add('2', 100);
+g.add('3', 175);
+g.add('4', 130);
+g.add('5', 150);
+g.add('6', 175);
+g.add('7', 205);
+g.add('8', 125);
+g.add('9', 125);
+g.add('10', 135);
+g.add('11', 125);
+
+//If called without a height parameter, defaults to 250px
+//g.render("myCanvas", "test graph");
+
+// Set Max/Min values for Y scale. If min specfied is > min(data), 
+// then min(data) is used
+//g.setMax(350);
+//g.setMin(100);
+
+g.render("myCanvas", "test graph", 250);
+
+</script>
+<!-- graph code ends here-->
+<!--
+   ┏━━━━━━━━━━━━━━━━━━━━━┓
+   ┃             源 码 爱 好 者               ┃
+   ┣━━━━━━━━━━━━━━━━━━━━━┫
+   ┃                                          ┃
+   ┃           提供源码发布与下载             ┃
+   ┃                                          ┃
+   ┃        http://www.jb51.net           ┃
+   ┃                                          ┃
+   ┃            互助、分享、提高              ┃
+   ┗━━━━━━━━━━━━━━━━━━━━━┛
+-->
+</div></div></center></body></html>

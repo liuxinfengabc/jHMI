@@ -1,0 +1,129 @@
+-------------------------------------------->>>具备功能0.1版本<<<------------------------------
+1.实现设备的添加 ，
+2.实现设备连线功能，
+3.实现设备命名功能，
+4.实现数据存储，序列化与反序列化.
+5.左侧工具栏设备列表动态添加，能够变成json文件进行动态加载。
+6.整合参数配置页面，配置部件参数，进行序列化，反序列化
+7.实现数据的动态加载，SetTimeInterval
+8,整理组态监控页面（ 配置部件参数， 节点（线和节点）如何实现，数据加载）
+
+
+--->0.0.1版本 2019.4.5 
+--------------->创世纪<----------
+ 佛祖保佑       永无BUG     永不修改  
+-------------------------------------
+
+--->0.12版本  2019.4.11号  
+dHMI实现了图元绘制、节点连线、图元保存（序列化）、图元加载（反序列化）等功能，初步可以进行使用。
+Node节点添加了 UUID，img_path两个属性，实现的唯一标识，图片加载功能；
+Link添加的begin_node,end_node 属性，实现了连线绘制功能。
+
+--->0.13版本 
+解决Link从json加载后，再保存不能有效保存begin_node,end_node属性的bug.
+resason:从json加载link，没有添加begin_node,end_node属性。
+
+--->0.14版本 
+addNodeLink修改为initNodeLink，不再被外部函数调用
+
+--->0.15版本 2019.4.12 
+实现自动折线功能（节点之间的线）
+
+--->0.16 版本 2019.4.12
+jtop.js  scene toJSON()
+//此处有bug,原来写法为 "background" == c && (d = a._background.src), d为绝对路径，无法移植。修改如下 .by liuxf  2019.4.12
+                "background" == c && (d = a._background.getAttribute("src")),
+
+
+
+
+
+-------------------------------------------->>>0.3版本规划<<<------------------------------
+完成基础的图元绘制功能，能够绘制任意形状、组合，动态展示数据，设置属性，实时展示数据。
+
+1.增加画折线功能，吸附到Node            zonedayBI--->0.1.9<--- 2019.9.1
+2.折线序列化以及加载
+3.增加本地js文件，FileSaver.js toaster.min.js
+4.重构zdHMI.js,将 创建类独立成JTopo的工厂类，同时修改JTopo.GroupNode类，解决了部分bug。  zonedayBI--->0.2.0<--- 2019.9.6
+5.初步实现group的序列化保存功能，并实现子元与主元的相对位置序列化。   仍然存在线路的相对位置问题。 zonedayBI--->0.2.1<--- 
+
+6.图元增加控制句柄，放大、缩小、移动等 ok    zonedayBI--->0.2.2<--- 
+7.增加左侧列表，能够选择不同的连接线   ok
+8.重构HMI，添加连接线、节点等各种配置菜单。ok
+9.实现数据从json文件加载  ok 
+
+
+ zonedayBI--->0.2.3<--- 2019-9-19begin
+1.增加椭圆，园，矩形，三角形等shape绘制功能    
+图元类型：currentEleType  :           link node group   
+图元子类型 currentEleSubType：   
+     lineType:  foldLink  link   polyLine   noneline(停止画线）
+     node:	node linkNode textNode  circleNode  
+     group:  group-jsonFileName
+2.需要解决的问题，形状属性的保存（比如圆形，椭圆），图片可以为空的设置，只是画出矢量图。
+
+3.增加设置属性框,修改节点设置文本的bug，恢复节点配置信息
+
+4.新版本HMIShow
+
+zonedayBI--->0.2.4<---
+1.添加link的x,y位置，需要位置吗，
+2.增加图形组合功能，能够动态显示在左侧列表。  
+  拖拽group, 设置 x,  y ,width, height.
+  保存group，保存相对位置，zoom比例，旋转等信息
+  加载group，根据相对位置实时更新子图元的位置  
+
+
+
+zonedayBI--->0.2.5<---
+1.增加属性配置功能，能够设置线条的色彩、粗细等属性
+2.属性配置关联报表，自定义简单曲线，
+3.自定义报表（报表配置器），BITable
+4.自定义曲线（不同维度查看不同的指标数据）
+5.模板配置器，通过拖拽div（nodeGroup container？？），分割展示区域，并在不同的区域配置数据块。
+canvas支持div? 还是先div,然后再canvas
+
+zonedayBI--->0.2.6<---
+1.增加图元状态变化功能：开关闭合功能，模拟电流、水流的流动功能（潮流），色彩变化功能（红绿灯）
+2.动画效果，视频播放
+
+zonedayBI--->0.2.7<---
+1.websocket封装 RabbitMQ 实时在线监测
+2.HMIShow左侧列表，动态加载监控图元
+
+zonedayBI--->0.2.8<---
+1.修改bug,提高体验
+2.左侧图元列表，基于json文件整理
+3.整合到后台，websqlite存储组合图元（json文件）。
+
+-------------------------------------------->>>0.4版本规划<<<------------------------------
+项目开发上升到战略高度，联合CCMService,RabbitMQ，支撑长庆项目、源深项目的发展。
+
+
+
+-------------------flag------------------------------------------
+
+
+
+0.2版本规划：
+自定义图元参考：
+https://blog.csdn.net/xuegang/article/details/83195740       #js画矢量图(wz_jsgraphics.js)
+https://blog.csdn.net/u011371255/article/details/84533214
+#---------------------------------
+
+
+https://blog.csdn.net/Harriet666/article/details/71419229
+https://blog.csdn.net/wangshu696/article/details/43700959
+
+https://www.zhihu.com/question/41026400
+
+
+
+
+
+
+
+
+
+
+

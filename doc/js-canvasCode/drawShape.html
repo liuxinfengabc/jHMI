@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-box" style="width: 1080px; height: 1920px;padding-left: 100px;">
+      
+        <canvas id="canvas" width="800" height="500"></canvas>
+        <script src="js/jquery-3.2.1.min.js"></script>
+
+    </div>
+    <script type="text/javascript">
+        //https://blog.csdn.net/qq_31164127/article/details/72929871
+        var canvas = document.getElementById('canvas'); // 得到画布
+        var ctx = canvas.getContext('2d'); // 得到画布的上下文对象
+        var flag = false;
+        var x = 0; // 鼠标开始移动的位置X
+        var y = 0; // 鼠标开始移动的位置Y
+        var url = ''; // canvas图片的二进制格式转为dataURL格式
+
+        /* 为canvas绑定mouse事件 */
+        $('canvas').mousedown(function (e) {
+            flag = true;
+            x = e.offsetX; // 鼠标落下时的X
+            y = e.offsetY; // 鼠标落下时的Y
+        }).mouseup(function (e) {
+            flag = false;
+            url = $('canvas')[0].toDataURL(); // 每次 mouseup 都保存一次画布状态
+        }).mousemove(function (e) {
+
+            drawPencil(e);
+          //  drawCircle(e); // 绘制方法
+        });
+
+        //1、画笔工具
+        function drawPencil(e) {
+            if (flag) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke(); // 调用绘制方法 
+            } else {
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+        }
+
+        //2、画矩形
+        function drawRect(e) {
+            if (flag) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.strokeRect(x, y, e.offsetX - x, e.offsetY - y);
+            }
+        }
+        //画直线
+        function drawLine(e) {
+            if (flag) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        }
+        //4、画圆circle
+
+        function drawCircle(e) {
+            if (flag) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                var rx = (e.offsetX - x) / 2;
+                var ry = (e.offsetY - y) / 2;
+                var r = Math.sqrt(rx * rx + ry * ry);
+                ctx.arc(rx + x, ry + y, r, 0, Math.PI * 2); // 第5个参数默认是false-顺时针
+                ctx.stroke();
+            }
+        }
+
+        //但是这样，画布上只能同时有一个图形，所以需要保存画布之前的状态
+        function loadImage() {
+            var img = new Image();
+            img.src = url;
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+
+      
+    </script>
+</body>
+</html>
